@@ -1,21 +1,39 @@
 //
-//  HomeView.swift
+//  HomeView\.swift
 //  FilmFlix
 //
-//  Created by muqeet syed on 18/03/2026.
+//  Created by muqeet syed on 19/03/2026.
 //
 
 import SwiftUI
 
 struct HomeView: View {
-    
-    var heroTestTitle=""
+    var heroTestTitle = Constants.testTitleURL;
     
     var body: some View {
-        Text("Hello, World!")
+        VStack{
+            AsyncImage(url: URL(string: heroTestTitle)){ image in image.resizable().scaledToFit()
+            } placeholder: {
+                ProgressView()
+            }
+            HStack{
+                Button{
+                    
+                } label: {
+                Text(Constants.playString).ghostButton()
+                    }
+                
+                Button{
+                    
+                } label: {
+                    Text(Constants.downloadString).ghostButton()
+                }
+            }
+            
+        }
     }
 }
 
-#Preview{
+#Preview {
     HomeView()
 }
