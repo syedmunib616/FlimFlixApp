@@ -11,7 +11,7 @@ import SwiftUI
 
 struct HorizontalListView: View {
     
-    let header = Constants.trendingMoviewString
+    let header : String
     var titles = [Constants.testTitleURL, Constants.testTitleURL2,Constants.testTitleURL3,Constants.testTitleURL3]
     
     var body: some View {
@@ -21,7 +21,7 @@ struct HorizontalListView: View {
                 LazyHStack{
                     ForEach(titles,id: \.self){title in
                         AsyncImage(url: URL(string: title)){image in
-                            
+                             
                             image
                                 .resizable()
                                 .scaledToFit()
@@ -43,5 +43,5 @@ struct HorizontalListView: View {
 }
 
 #Preview {
-    HorizontalListView()
+    HorizontalListView(header: Constants.trendingMoviewString)
 }
