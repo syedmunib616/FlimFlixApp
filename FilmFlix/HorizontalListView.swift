@@ -19,7 +19,9 @@ struct HorizontalListView: View {
             Text(header).font(.title)
             ScrollView(.horizontal){
                 LazyHStack{
-                    ForEach(titles,id: \.self){title in
+                    ForEach(titles.indices, id: \.self){index in
+                        let title = titles[index]
+                        
                         AsyncImage(url: URL(string: title)){image in
                              
                             image
